@@ -5,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', (e) => {
   const pass = document.getElementById('password').value;
   const remember = document.getElementById('remember').checked;
 
-  if (user === 'Comoe admin' && pass === '123') {
+  if (user === 'admin' && pass === 'abc_123') {
     setLogin(remember);
     window.location.href = 'idc.html';
   } else {

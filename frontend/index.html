@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Connexion</title>
+        <title>Accéder à l'IDC</title>
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
@@ -17,16 +17,16 @@
             </div>
         </header>
         <main>
-        <form id="loginForm" class="form td-form" style="background-color: #ffffff42; padding: 20px; border-radius: 20px;">
-            <h2 style="text-align: center;">Connexion</h2>
-            <input type="text" class="element objet" id="username" placeholder="Nom d'utilisateur" required>
-            <input type="password" class="element objet" id="password" placeholder="Mot de passe" required>
-            <label><input type="checkbox" id="remember"> Rester connecté</label>
-            <button type="submit" class="button submit-btn element">Se connecter</button>
-            <p id="loginError" class="error"></p>
-        </form>
+            <form id="loginForm" class="form td-form" style="background-color: #ffffff42; padding: 20px; border-radius: 20px; box-shadow:4px 4px 25px #00000042">
+                <h2 style="text-align: center;">Accéder à l'IDC</h2>
+                <input type="text" class="element objet" id="username" placeholder="Nom d'utilisateur" required>
+                <input type="password" class="element objet" id="password" placeholder="Mot de passe" required>
+                <label style="display: none;"><input type="checkbox" id="remember"> Rester connecté</label>
+                <button type="submit" class="button submit-btn element">Accéder</button>
+                <p id="loginError" class="error" style="text-align: center;"></p>
+            </form>
         </main>
         <script src="js/session.js"></script>
         <script src="js/login.js"></script>
-        </body>
+    </body>
 </html>
