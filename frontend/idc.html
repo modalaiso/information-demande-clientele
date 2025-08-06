@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Information Demande Clientèle</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="h-logo">
+                <span>AYA Work</span>
+            </div>
+            <div id="horloge-container">
+                <div id="date"></div>
+                <div id="heure"></div>
+            </div>
+        </header>
+        <main>
+            <h1>Information demande clientèle</h1>
+            <form id="form" action="https://script.google.com/macros/s/AKfycbynBk9sugHteQTyixiv_sR_lJyxvOYVJOgAr5kTxBkKVj3helybUITpl_W_x8_o89a7/exec" method="POST" class="form td-form">
+                <select name="type" id="type_demande" class="element objet" required>
+                    <option value="">Type de demande</option>
+                    <option value="Branchement abonnement">Branchement abonnement</option>
+                    <option value="Modification_contractuelle">Modification contractuelle</option>
+                    <option value="Mutation">Mutation</option>
+                    <option value="Réabonnement">Réabonnement</option>
+                    <option value="Vente au comptant">Vente au comptant</option>
+                </select>
+                <input name="numero" type="text" placeholder="Numéro de demande" class="element objet" maxlength="6" inputmode="numeric" required>
+                <input name="contact" type="text" placeholder="Contact client" class="element objet" maxlength="10" inputmode="numeric" required>
+                <button type="submit" class="button submit-btn element">INSERER</button>
+                <div id="message" style="margin-top: 10px; font-size: 14px; text-align: center;"></div>
+            </form>
+        </main>
+        <footer style="text-align: center; opacity: 0.5;">&copy; Développer par Mobio Israel</footer>
+        <script src="js/horloge.js"></script>
+        <script>
+            const scriptURL = "https://script.google.com/macros/s/AKfycbynBk9sugHteQTyixiv_sR_lJyxvOYVJOgAr5kTxBkKVj3helybUITpl_W_x8_o89a7/exec"; // remplace ici
+            const form = document.getElementById("form");
+            const messageDiv = document.getElementById("message");
+
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+    
+                fetch(scriptURL, {
+                    method: "POST",
+                    body: formData,
+                })
+                .then(response => {
+                    if (response.ok) {
+                        messageDiv.textContent = "Insertion réussie";
+                        messageDiv.style.color = "green";
+                        form.reset();
+                    } else {
+                        throw new Error("Erreur de réponse");
+                    }
+                })
+                .catch(error => {
+                    messageDiv.textContent = "Erreur lors de l'insertion";
+                    messageDiv.style.color = "red";
+                    console.error("Erreur : ", error);
+                });
+
+                setTimeout(() => {
+                    messageDiv.textContent = "";
+                }, 1000);
+            });
+        </script>
+    </body>
+</html>

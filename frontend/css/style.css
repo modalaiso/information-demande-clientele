@@ -10,7 +10,6 @@ body {
     margin: 0;
     height: 100vh;
     background: linear-gradient(270deg, #00973f, #f17d01);
-    overflow: hidden;
 }
 
 header {
