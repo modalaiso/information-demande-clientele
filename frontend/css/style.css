@@ -1,0 +1,100 @@
+:root {
+    --font-family: 'Open Sans', sans-serif;
+}
+
+* {
+    font-family: var(--font-family);
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(270deg, #00973f, #f17d01);
+    overflow: hidden;
+}
+
+header {
+    margin: 20px 20px 0 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.h-logo {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.h-logo img {
+    width: 2.3em;
+    height: auto;
+    box-shadow: 2px 2px 10px #00000062;
+}
+
+.h-logo span {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px #00000062;
+}
+
+#horloge-container {
+    text-align: center;
+    font-family: monospace;
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+
+main {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 30vw;
+}
+
+.element, .button {
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 4px 4px 20px #00000054;
+}
+
+.objet {
+    background-color: #ffffff91;
+    backdrop-filter: blur(5px);
+}
+
+.button {
+    cursor: pointer;
+    background: linear-gradient(270deg, #f17d017e, #00973f7e);
+}
+
+.button:active {
+    transform: scale(0.99);
+    box-shadow: 1px 1px 20px #00000054;
+    transition: all ease-out 0.1s;
+}
+
+@media screen and (max-width: 884px) {
+    h1 {
+        font-size: 1.5em;
+    }
+    
+    .form {
+        width: 70vw;
+    }
+}

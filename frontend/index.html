@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Information Demande Clientèle</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="h-logo">
+                <span>COMOE.</span>
+                <img src="assets/img/cie.png" alt="Logo CIE">
+                <span>.CI</span>
+            </div>
+            <div id="horloge-container">
+                <div id="date"></div>
+                <div id="heure"></div>
+            </div>
+        </header>
+        <main>
+            <h1>Information demande clientèle</h1>
+            <form action="" class="form td-form">
+                <select id="type_demande" class="element objet" required>
+                    <option value="">Type de demande</option>
+                    <option value="branchement_abonnement">Branchement abonnement</option>
+                    <option value="modification_contractuelle">Modification contractuelle</option>
+                    <option value="mutation">Mutation</option>
+                    <option value="reabonnement">Réabonnement</option>
+                    <option value="vente_comptant">Vente au comptant</option>
+                </select>
+                <input type="text" placeholder="Numéro de demande" class="element objet" maxlength="6" inputmode="numeric" required>
+                <input type="text" placeholder="Contact client" class="element objet" maxlength="10" inputmode="numeric" required>
+                <button type="submit" class="button submit-btn element">INSERER</button>
+            </form>
+        </main>
+        <footer style="text-align: center; opacity: 0.5;">&copy; Développer par Mobio Israel</footer>
+        <script src="js/horloge.js"></script>
+    </body>
+</html>
